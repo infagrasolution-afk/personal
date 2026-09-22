@@ -24,5 +24,5 @@ def generate_qr(url, output_filename="codigo_amor.png"):
 
 if __name__ == "__main__":
     # Cambia esta URL por la URL donde esté alojada la página, o tu IP local para probar
-    url_destino = "http://localhost:5173" 
+    url_destino = "https://mi-carta-i0kk.onrender.com" 
     generate_qr(url_destino)
