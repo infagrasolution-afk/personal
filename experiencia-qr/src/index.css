@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+  --background: #0b0f19;
+  --text-main: #f3f4f6;
+  --accent: #d4af37; /* Dorado */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-main);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Cielo Estrellado (Más claro) */
+.starry-night {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  /* Un cielo de atardecer claro, transicionando a un azul profundo suave */
+  background: radial-gradient(circle at bottom, #4a6fa5 0%, #162a45 100%);
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    10vw 20vh #fff,
+    40vw 10vh #fff,
+    60vw 50vh #fff,
+    80vw 30vh #fff,
+    20vw 80vh #fff,
+    90vw 90vh #fff,
+    30vw 40vh #fff,
+    50vw 70vh #fff,
+    70vw 15vh #fff,
+    15vw 60vh #fff;
+  animation: animStar 50s linear infinite;
+}
+
+.star::after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+.star2 {
+  width: 3px;
+  height: 3px;
+  box-shadow: 
+    15vw 25vh #fff,
+    45vw 15vh #fff,
+    65vw 55vh #fff,
+    85vw 35vh #fff,
+    25vw 85vh #fff,
+    95vw 95vh #fff,
+    35vw 45vh #fff,
+    55vw 75vh #fff,
+    75vw 20vh #fff,
+    20vw 65vh #fff;
+  animation: animStar 100s linear infinite;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* La Luna */
+.moon {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: inset -15px -15px 0 0 #f6f1d5, 0 0 20px 0px rgba(246, 241, 213, 0.4);
+  z-index: -1;
+  opacity: 0.8;
+  animation: floatMoon 10s ease-in-out infinite;
+}
+
+@keyframes floatMoon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Typografía del Mensaje */
+.letter-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #fdfbf7;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: bold;
+}
